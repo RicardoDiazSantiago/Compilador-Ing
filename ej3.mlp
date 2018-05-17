@@ -1,0 +1,43 @@
+
+--- Ejemplo que usa la construccion mientras 
+
+--
+
+
+entero i;
+entero k=i;
+flotante pi=3.1416;
+flotante pi2=pi*pi;
+entero factorial;
+
+define factorial(entero n):entero
+{
+   entero prodp=1;
+   entero contador=1;
+   si(n<=1)
+     regresa 1;
+   otro
+      mientras (contador <= n){
+         prodp= prodp*contador;
+         contador=contador+1;
+      } 
+      regresa prodp;
+}
+
+define areaC(flotante radio): flotante
+{
+	regresa pi*radio*radio;
+
+}
+
+f=factorial(5);
+despliega("El factorial de 5\t\t es\012\015 y...\
+             adios\n");
+despliega(f);
+
+despliega("El área de un círculo de radio r=5.3 es:");
+despliega(areaC(5.3));
+
+
+
+
