@@ -42,7 +42,11 @@ entero     {adjust(); return ENTERO;}
 
 [0-9]+   {adjust(); yylval.ival=atoi(yytext); return INT;}
 
-
+"/*"                       {adjust();BEGIN(comentarioc);}
+<comentarioc>[^*\n]*       {adjust();/* come todo lo que no sea '*' */}
+<comentarioc>"*"+[^*/\n]*  {adjust();/* come '*'s no seguidos por '/' */}
+<comentarioc>\n            {adjust();EM_newline();}
+<comentarioc>"*"+"/"       {adjust(); BEGIN(INITIAL);}
 
 
 
