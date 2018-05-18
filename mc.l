@@ -42,9 +42,7 @@ entero     {adjust(); return ENTERO;}
 
 [0-9]+   {adjust(); yylval.ival=atoi(yytext); return INT;}
 
-
-
-
+"/""/"[^/\n]*          {printf("Comentario tipo C++");}
 
   /*<<EOF>> {printf("\nFin de Archivo encontrado."); exit(0); }*/
 
