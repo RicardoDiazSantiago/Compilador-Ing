@@ -31,7 +31,7 @@ char *string_buf_ptr;
 
 %}
 
-
+ID [A-Z|_|@][A-Z|0-9|_@]*
 %x comentario
 %%
 
@@ -47,3 +47,5 @@ entero     {adjust(); return ENTERO;}
   /*<<EOF>> {printf("\nFin de Archivo encontrado."); exit(0); }*/
 
 .        {adjust(); EM_error(EM_tokPos,"token ilegal");}
+
+{ID}	       {strcpy(u.s,yytext); return ID;}
