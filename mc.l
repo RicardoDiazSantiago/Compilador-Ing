@@ -46,6 +46,6 @@ entero     {adjust(); return ENTERO;}
 
 
 
-  /*<<EOF>> {printf("\nFin de Archivo encontrado."); exit(0); }*/
+  /*<<EOF>> {printf("\nFin de Archivo encontrado Bybye."); exit(0); }*/
 
 .        {adjust(); EM_error(EM_tokPos,"token ilegal");}
