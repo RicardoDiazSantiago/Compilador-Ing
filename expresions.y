@@ -11,9 +11,8 @@
 %}
 
 %token NUM
-%left 'o''r''a''n''d'
-%left '>' '<'
-%left '='
+%left '|' '&' 
+%left '>' '<' '=' '!'
 %left '+' '-'
 %left '*' '/' '%'
 %right '^'
@@ -24,10 +23,11 @@ input:    /* empty */
 ;
 
 line:     '\n'
-        | exp '\n'      { printf ("Sintacticamente correcto\n"); }
+        | exp ';''\n'      { printf ("Sintacticamente correcto\n"); }
         ;
 
-exp:      NUM           
+exp:      NUM
+             | '!' exp            
              | exp '+' exp   
              | exp '-' exp   
              | exp '*' exp               
@@ -36,10 +36,12 @@ exp:      NUM
              | exp '^' exp
              | exp '>' exp  
              | exp '<' exp
-             | exp '<''=' exp
              | exp '>''=' exp
-             | exp 'o''r' exp
-             | exp 'a''n''d' exp
+             | exp '<''=' exp
+             | exp '!''=' exp
+             | exp '=''=' exp
+             | exp '|''|' exp
+             | exp '&''&' exp
              | '(' exp ')'
              | '[' exp ']'
              | '{' exp '}'
