@@ -38,9 +38,20 @@ char *string_buf_ptr;
 " "      {adjust(); continue;}
 \n       {adjust(); EM_newline(); continue;}
 
-entero     {adjust(); return ENTERO;}
-
+/* Tipo */
+int     {adjust(); return ENTERO;}
 [0-9]+   {adjust(); yylval.ival=atoi(yytext); return INT;}
+
+/* id */
+[_a-zA-Z]+   {adjust(); yylval.ival=atoi(yytext); return ID;}
+
+
+/* Return */
+return   {adjust();return RETURN;}
+
+
+
+
 
 /***********************************************************************************
   Comentarios en C tipo '/* Comentario */'
