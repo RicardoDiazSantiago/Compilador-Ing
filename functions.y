@@ -101,8 +101,9 @@ eControl: bifOCiclo bifOCiclo
 ;
 
 bifOCiclo: 
-            | BIFURCACION
-            | CICLO
+            | if
+            | while
+            | for
             | eControl
 ;
 
