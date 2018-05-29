@@ -9,5 +9,8 @@ typedef union {
 #define	DESPLIEGA 261
 #define SI        262
 #define OTRO      263
+#define FOR	264
+#define WHILE   265
+#define IF      266
 #define ENTERO    269
 extern YYSTYPE yylval;

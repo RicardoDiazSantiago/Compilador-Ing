@@ -11,7 +11,7 @@ int yylex(void); /* prototipo para la funcion de analisis lexico */
 string tokname(int tok);
 
 string toknames[] = {"ID", "STRING", "INT","DESPLIEGA","SI",
-                     "OTRO","AND","OR","NOT","DIFER","IGUAL",
+                     "OTRO","FOR","WHILE","IF",
                      "ENTERO"};
 
 
